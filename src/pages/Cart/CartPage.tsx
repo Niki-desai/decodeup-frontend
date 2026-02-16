@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useClearCartMutation, useGetCartQuery } from '../../../store/slices/cartApi';
+import { useClearCartMutation, useGetCartQuery } from '../../store/slices/cartApi';
 import CartItem from '../../components/features/CartItem/CartItem';
 import CartSummary from '../../components/features/CartSummary/CartSummary';
 import LoadingSpinner from '../../components/features/LoadingSpinner/LoadingSpinner';

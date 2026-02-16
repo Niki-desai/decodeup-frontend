@@ -1,6 +1,6 @@
 import React from 'react';
-import { useGetProductsQuery } from '../../../store/slices/productsApi';
-import { useGetCartQuery } from '../../../store/slices/cartApi';
+import { useGetProductsQuery } from '../../store/slices/productsApi';
+import { useGetCartQuery } from '../../store/slices/cartApi';
 import ProductCard from '../../components/features/ProductCard/ProductCard';
 import Button from '../../components/common/Button/Button';
 import LoadingSpinner from '../../components/features/LoadingSpinner/LoadingSpinner';

@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { useAppDispatch, useAppSelector } from '../../../store/hooks';
-import { useLoginMutation, useSignupMutation } from '../../../store/slices/authApi';
-import { setCredentials } from '../../../store/slices/authSlice';
-import Button from '../../components/common/Button/Button';
+import Button from '../components/common/Button/Button';
 import './AuthPage.css';
+import { useLoginMutation, useSignupMutation } from '../store/slices/authApi';
+import { useAppDispatch, useAppSelector } from '../store/hooks';
+import { setCredentials } from '../store/slices/authSlice';
 
 // Auth Page with Signup and Login //
 export default function AuthPage() {
