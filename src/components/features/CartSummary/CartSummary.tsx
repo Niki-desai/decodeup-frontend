@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from '../../common/Button/Button';
 import './CartSummary.css';
+import Button from '../../common/Button/Button';
 
 // Cart Summary Component //
 interface CartSummaryProps {
