@@ -1,0 +1,35 @@
+/* Main App Styles */
+.app {
+  min-height: 100vh;
+}
+
+.nav {
+  background: #1e293b;
+  padding: 1rem 2rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  border-bottom: 2px solid #334155;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: #334155;
+  color: #38bdf8;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+}

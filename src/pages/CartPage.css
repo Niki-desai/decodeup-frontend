@@ -1,0 +1,35 @@
+/* Cart Page Styles */
+.cart-page {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #0f172a, #1e293b);
+    padding: 2rem;
+}
+
+.empty-cart {
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    margin-top: 4rem;
+}
+
+.cart-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .cart-content {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-summary {
+        position: static;
+    }
+}
