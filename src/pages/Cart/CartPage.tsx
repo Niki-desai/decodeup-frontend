@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useClearCartMutation, useGetCartQuery } from '../store/slices/cartApi';
-import CartItem from '../components/CartItem';
-import CartSummary from '../components/CartSummary';
-import LoadingSpinner from '../components/LoadingSpinner';
-import Modal from '../components/common/Modal';
+import { useClearCartMutation, useGetCartQuery } from '../../store/slices/cartApi';
+import CartItem from '../../components/features/CartItem/CartItem';
+import CartSummary from '../../components/features/CartSummary/CartSummary';
+import LoadingSpinner from '../../components/features/LoadingSpinner/LoadingSpinner';
+import Modal from '../../components/common/Modal/Modal';
 import './CartPage.css';
 
 const CartPage: React.FC = () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './common/Button';
+import Button from '../../common/Button/Button';
 import './CartSummary.css';
 
 // Cart Summary Component //
@@ -22,9 +22,9 @@ const CartSummary: React.FC<CartSummaryProps> = ({ totalItems, totalPrice, onChe
         <span>Total Price:</span>
         <span>${totalPrice.toFixed(2)}</span>
       </div>
-      <Button 
-        variant="primary" 
-        fullWidth 
+      <Button
+        variant="primary"
+        fullWidth
         className="checkout-btn"
         onClick={onCheckout}
         isLoading={isLoading}

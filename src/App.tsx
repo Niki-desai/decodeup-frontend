@@ -1,13 +1,13 @@
 import { Routes, Route, NavLink, Navigate } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from './store/hooks';
 import { logout } from './store/slices/authSlice';
-import AuthPage from './pages/AuthPage';
-import ProductsPage from './pages/ProductsPage';
-import CartPage from './pages/CartPage';
+import AuthPage from './pages/Auth/AuthPage';
+import ProductsPage from './pages/Products/ProductsPage';
+import CartPage from './pages/Cart/CartPage';
 import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Button from './components/common/Button';
+import Button from './components/common/Button/Button';
 import './App.css';
 
 // Protected Route Component //

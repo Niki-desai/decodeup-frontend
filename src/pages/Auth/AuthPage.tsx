@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { useAppDispatch, useAppSelector } from '../store/hooks';
-import { useLoginMutation, useSignupMutation } from '../store/slices/authApi';
-import { setCredentials } from '../store/slices/authSlice';
-import Button from '../components/common/Button';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { useLoginMutation, useSignupMutation } from '../../store/slices/authApi';
+import { setCredentials } from '../../store/slices/authSlice';
+import Button from '../../components/common/Button/Button';
 import './AuthPage.css';
 
 // Auth Page with Signup and Login //
