@@ -1,6 +1,6 @@
 import React from 'react';
 import { toast } from 'react-toastify';
-import { useAddToCartMutation } from '../../store/slices/cartApi';
+import { useAddToCartMutation } from '../../../../store/slices/cartApi';
 import Button from '../../common/Button/Button';
 import Card from '../../common/Card/Card';
 import './ProductCard.css';
