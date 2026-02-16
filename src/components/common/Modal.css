@@ -37,6 +37,21 @@
     color: #1e293b;
 }
 
+.close-btn-custom {
+    padding: 0.2rem 0.5rem !important;
+    font-size: 1.5rem !important;
+    line-height: 1 !important;
+    min-width: auto !important;
+    border: none !important;
+    color: #94a3b8 !important;
+}
+
+.close-btn-custom:hover {
+    background: #f1f5f9 !important;
+    color: #1e293b !important;
+    transform: none !important;
+}
+
 .close-btn {
     background: none;
     border: none;

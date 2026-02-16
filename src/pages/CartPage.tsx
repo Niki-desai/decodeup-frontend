@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useGetCartQuery } from '../store/slices/cartApi';
+import { useClearCartMutation, useGetCartQuery } from '../store/slices/cartApi';
 import CartItem from '../components/CartItem';
 import CartSummary from '../components/CartSummary';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -8,7 +8,9 @@ import './CartPage.css';
 
 const CartPage: React.FC = () => {
     const { data: cart, isLoading } = useGetCartQuery();
+    const [clearCart] = useClearCartMutation();
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isCheckingOut, setIsCheckingOut] = useState(false);
 
     if (isLoading) return <LoadingSpinner />;
 
@@ -16,8 +18,16 @@ const CartPage: React.FC = () => {
     const totalItems = items.reduce((acc: number, item: any) => acc + item.quantity, 0);
     const totalPrice = items.reduce((acc: number, item: any) => acc + item.product.price * item.quantity, 0);
 
-    const handleCheckout = () => {
-        setIsModalOpen(true);
+    const handleCheckout = async () => {
+        setIsCheckingOut(true);
+        try {
+            await clearCart().unwrap();
+            setIsModalOpen(true);
+        } catch (err) {
+            console.error('Failed to clear cart:', err);
+        } finally {
+            setIsCheckingOut(false);
+        }
     };
 
     return (
@@ -26,22 +36,32 @@ const CartPage: React.FC = () => {
                 <h1>Your Shopping Cart</h1>
             </header>
 
-            {items.length === 0 ? (
+            {items.length === 0 && !isModalOpen ? (
                 <div className="empty-cart">
                     <p>Your cart is empty. Start shopping!</p>
                 </div>
             ) : (
                 <div className="cart-content">
-                    <div className="cart-items">
-                        {items.map((item: any) => (
-                            <CartItem key={item.id} item={item} />
-                        ))}
-                    </div>
-                    <CartSummary
-                        totalItems={totalItems}
-                        totalPrice={totalPrice}
-                        onCheckout={handleCheckout}
-                    />
+                    {items.length > 0 && (
+                        <>
+                            <div className="cart-items">
+                                {items.map((item: any) => (
+                                    <CartItem key={item.id} item={item} />
+                                ))}
+                            </div>
+                            <CartSummary
+                                totalItems={totalItems}
+                                totalPrice={totalPrice}
+                                onCheckout={handleCheckout}
+                                isLoading={isCheckingOut}
+                            />
+                        </>
+                    )}
+                    {items.length === 0 && isModalOpen && (
+                        <div className="empty-cart">
+                            <p>Thank you for your order!</p>
+                        </div>
+                    )}
                 </div>
             )}
 

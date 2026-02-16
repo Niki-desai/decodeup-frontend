@@ -23,7 +23,13 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
                     >
                         <div className="modal-header">
                             <h2>{title}</h2>
-                            <button className="close-btn" onClick={onClose}>&times;</button>
+                            <Button
+                                variant="outline"
+                                className="close-btn-custom"
+                                onClick={onClose}
+                            >
+                                &times;
+                            </Button>
                         </div>
                         <div className="modal-body">
                             {children}

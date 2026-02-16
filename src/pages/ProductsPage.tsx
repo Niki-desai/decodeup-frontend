@@ -2,6 +2,7 @@ import React from 'react';
 import { useGetProductsQuery } from '../store/slices/productsApi';
 import { useGetCartQuery } from '../store/slices/cartApi';
 import ProductCard from '../components/ProductCard';
+import Button from '../components/common/Button';
 import LoadingSpinner from '../components/LoadingSpinner';
 import './ProductsPage.css';
 
@@ -17,9 +18,9 @@ const ProductsPage: React.FC = () => {
             <div className="error-container">
                 <h2>Oops! Something went wrong</h2>
                 <p>We couldn't load the products. Please try again later.</p>
-                <button onClick={() => window.location.reload()} className="retry-btn">
+                <Button onClick={() => window.location.reload()} variant="primary">
                     Retry
-                </button>
+                </Button>
             </div>
         );
     }
